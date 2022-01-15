@@ -1,7 +1,10 @@
+import time
+from selenium.webdriver.common.by import By
 link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
 
 def test_language(browser):
     browser.get(link)
-    ell = browser.find_element_by_css_selector(".btn.btn-lg.btn-primary.btn-add-to-basket")
+    time.sleep(30)
+    ell = browser.find_element(By.CSS_SELECTOR,".btn.btn-lg.btn-primary.btn-add-to-basket")
     assert ell, "Is OK"
